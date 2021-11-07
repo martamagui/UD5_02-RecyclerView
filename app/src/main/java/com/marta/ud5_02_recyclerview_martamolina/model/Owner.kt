@@ -4,39 +4,39 @@ import com.google.gson.annotations.SerializedName
 
 data class Owner(
     @SerializedName("login")
-    val login : String,
+    val ownerName : String,
     @SerializedName("id")
     val ownerId: Int,
     @SerializedName("node_id")
-    val OwnerNodeId: String,
+    val ownerNodeId: String,
     @SerializedName("avatar_url")
-    val avatarUrl : String,
+    val ownerAvatarUrl : String,
     @SerializedName("gravatar_id")
-    val gravatar_id :  String,
+    val ownerGravatar_id :  String,
     @SerializedName("url")
-    val url: String,
+    val ownerUrl: String,
     @SerializedName("html_url")
     val ownerHtmlUrl: String,
     @SerializedName("followers_url")
-    val followersUrl: String,
+    val ownerFollowersUrl: String,
     @SerializedName("following_url")
-    val followingUrl :String,
+    val ownerFollowingUrl :String,
     @SerializedName("gists_url")
-    val gistsUrl :  String,
+    val ownerGistsUrl :  String,
     @SerializedName("starred_url")
-    val starredUrl: String,
+    val ownerStarredUrl: String,
     @SerializedName("subscriptions_url")
-    val subscriptionsUrl : String,
+    val ownerSubscriptionsUrl : String,
     @SerializedName("organizations_url")
-    val organizationsUrl : String,
+    val ownerOrganizationsUrl : String,
     @SerializedName("repos_url")
-    val reposUrl: String,
+    val ownerReposUrl: String,
     @SerializedName("events_url")
-    val eventsUrl : String,
+    val ownerEventsUrl : String,
     @SerializedName("received_events_url")
-    val receivedEventsUrl: String,
+    val ownerReceivedEventsUrl: String,
     @SerializedName("type")
-    val type : String,
+    val ownerType : String,
     @SerializedName("site_admin")
-    val siteAdmin : Boolean
+    val ownerSiteAdmin : Boolean
 )
