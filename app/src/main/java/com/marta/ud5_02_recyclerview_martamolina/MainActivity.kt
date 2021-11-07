@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.marta.ud5_02_recyclerview_martamolina.databinding.ActivityMainBinding
 import com.marta.ud5_02_recyclerview_martamolina.model.RepositoryResponse
+import com.marta.ud5_02_recyclerview_martamolina.model.toRepository
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var adapter : RepositoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         val repositories = app.repositoriesList
         val repositoriesResults = Gson().fromJson(RecyclerFakeData.repositoriesJson, RepositoryResponse::class.java)
         Log.d("mainMsg",(repositoriesResults.size).toString())
+        repositories.addAll(listOf(repositoriesResults.toRepository()))
+        adapter = RepositoryAdapter(repositories)
+
 
     }
 }
