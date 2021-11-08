@@ -140,7 +140,7 @@ data class RepositoryResponse(
     @SerializedName("open_issues_count")
     val openIssuesCount: Int,
     @SerializedName("license")
-    val license: License,
+    val license: License?,
     @SerializedName("allow_forking")
     val allowForking: Boolean,
     @SerializedName("is_template")

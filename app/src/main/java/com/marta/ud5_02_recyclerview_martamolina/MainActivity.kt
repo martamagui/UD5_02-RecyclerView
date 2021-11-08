@@ -23,12 +23,10 @@ class MainActivity : AppCompatActivity() {
         binding.rvRepositories.layoutManager = LinearLayoutManager(this)
         val app = application as App
         val repositories = app.repositoriesList
-        var transformedJson: String = "{ \"repositories\": " + RecyclerFakeData.repositoriesJson + "}"
-        val repositoriesResults: Repositories? = Gson().fromJson(
-            transformedJson, Repositories::class.java
+        val repositoriesResults = Gson().fromJson(
+            RecyclerFakeData.repositoriesJson, Array<RepositoryResponse>::class.java
         )
-        Log.d("aaa", repositoriesResults.toString())
-        repositories.addAll(repositoriesResults!!.respositoriesGitHub.toRepository())
+        repositories.addAll(repositoriesResults.toRepository())
         adapter = RepositoryAdapter(repositories)
         binding.rvRepositories.adapter = adapter
     }

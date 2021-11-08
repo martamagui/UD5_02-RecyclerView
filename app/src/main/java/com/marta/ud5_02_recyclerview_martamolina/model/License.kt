@@ -6,7 +6,7 @@ data class License(
     @SerializedName("key")
     val licenseKey: String,
     @SerializedName("name")
-    val licenseName : String,
+    val licenseName : String ?,
     @SerializedName("spdx_id")
     val licenseSpdxId : String,
     @SerializedName("url")

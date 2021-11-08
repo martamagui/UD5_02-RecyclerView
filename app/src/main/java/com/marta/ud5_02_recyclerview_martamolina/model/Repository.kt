@@ -5,16 +5,16 @@ data class Repository(
     val description: String,
     val ownerAvatarUrl: String,
     val ownerName: String,
-    val licenseName: String,
+    val licenseName: String? = "There's no license name",
     val topics: List<String>,
-    val language: String
+    val language: String? = "Unknow"
 ) {
     constructor(repositoryResponse: RepositoryResponse) : this(
         repositoryResponse.name,
         repositoryResponse.description,
         repositoryResponse.owner.ownerAvatarUrl,
         repositoryResponse.owner.ownerName,
-        repositoryResponse.license.licenseName,
+        repositoryResponse.license?.licenseName,
         repositoryResponse.topics,
         repositoryResponse.language
     )
@@ -26,13 +26,13 @@ fun RepositoryResponse.toRepository(): Repository {
         this.description,
         this.owner.ownerAvatarUrl,
         this.owner.ownerName,
-        this.license.licenseName,
+        this.license?.licenseName,
         this.topics,
         this.language
     )
 }
 
-fun List<RepositoryResponse>.toRepository(): List<Repository>{
+fun Array<RepositoryResponse>.toRepository(): List<Repository>{
     return this.map{it.toRepository()}
 }
 
