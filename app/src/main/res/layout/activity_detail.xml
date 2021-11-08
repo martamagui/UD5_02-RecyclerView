@@ -115,14 +115,26 @@
                         android:text="@string/topics"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detaill_license" />
 
-                    <com.google.android.material.chip.Chip
+                    <TextView
                         android:id="@+id/chip_languaje"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/rounded_tvs"
+                        android:paddingStart="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="8dp"
                         android:text="@string/languaje"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/tv_detaill_topics"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detaill_topics" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

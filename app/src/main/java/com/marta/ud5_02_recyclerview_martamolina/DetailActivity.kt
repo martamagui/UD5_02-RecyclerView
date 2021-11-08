@@ -21,23 +21,32 @@ class DetailActivity : AppCompatActivity() {
                 .show()
         } else {
             val repository = app.repositoriesList.firstOrNull { repoId == it.id }
-            if (repository==null){
-                Toast.makeText(this, "User not found, go back to MainActivity :)", Toast.LENGTH_SHORT)
+            if (repository == null) {
+                Toast.makeText(
+                    this,
+                    "User not found, go back to MainActivity :)",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
-            }else{
+            } else {
                 Glide.with(binding.ivDetailRepImg.context)
-                    .load(repository.ownerAvatarUrl)
+                    .load((repository.ownerAvatarUrl).replace(" ", "").lowercase())
                     .placeholder(R.drawable.resource_default)
                     .into(binding.ivDetailRepImg)
                 binding.tvDetailRepositoryName.text = repository.name
                 binding.tvDetailDescription.text = repository.description
                 binding.tvDetaillLicense.text = repository.licenseName
                 var topics: String = "Tags: \n"
-                for(item in 0..repository.topics.size){
-                    topics+=" #$repository[item] \n"
+                if (repository.topics.size>0){
+                    for (item in repository.topics) {
+                        topics += " #" + item + ","
+                    }
+                    topics = topics.dropLast(1)
+                    binding.tvDetaillTopics.text = topics
                 }
-                binding.tvDetaillTopics.text = topics
-                binding.chipLanguaje.text = repository.language
+                if (!repository.language.isNullOrEmpty()) {
+                    binding.chipLanguaje.text = repository.language
+                }
             }
         }
 

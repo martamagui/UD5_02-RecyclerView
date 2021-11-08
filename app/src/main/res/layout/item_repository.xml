@@ -8,9 +8,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         app:cardBackgroundColor="@color/white"
@@ -42,8 +42,8 @@
         android:id="@+id/tv_rep_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textSize="20sp"
@@ -58,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_rep_name"
         app:layout_constraintStart_toStartOf="@+id/tv_rep_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_rep_name" />
