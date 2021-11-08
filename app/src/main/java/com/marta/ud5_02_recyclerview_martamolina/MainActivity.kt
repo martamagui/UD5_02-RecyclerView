@@ -13,7 +13,7 @@ import com.marta.ud5_02_recyclerview_martamolina.model.RepositoryResponse as Rep
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter : RepositoryAdapter
+    private lateinit var adapter: RepositoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,15 +23,17 @@ class MainActivity : AppCompatActivity() {
         binding.rvRepositories.layoutManager = LinearLayoutManager(this)
         val app = application as App
         val repositories = app.repositoriesList
-        val repositoriesResults : Repositories? = Gson().fromJson(
-            RecyclerFakeData.repositoriesJson, Repositories::class.java
+        var transformedJson: String = "{ \"repositories\": " + RecyclerFakeData.repositoriesJson + "}"
+        val repositoriesResults: Repositories? = Gson().fromJson(
+            transformedJson, Repositories::class.java
         )
         Log.d("aaa", repositoriesResults.toString())
-        //repositories.addAll(repositoriesResults.respositoriesGitHub.toRepository())
+        repositories.addAll(repositoriesResults!!.respositoriesGitHub.toRepository())
         adapter = RepositoryAdapter(repositories)
         binding.rvRepositories.adapter = adapter
     }
-    override fun onResume(){
+
+    override fun onResume() {
         super.onResume()
         adapter.notifyDataSetChanged()
     }
