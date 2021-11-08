@@ -32,7 +32,7 @@ fun RepositoryResponse.toRepository(): Repository {
     )
 }
 
-fun List<RepositoryResponse>.toFilm(): List<Repository>{
+fun List<RepositoryResponse>.toRepository(): List<Repository>{
     return this.map{it.toRepository()}
 }
 

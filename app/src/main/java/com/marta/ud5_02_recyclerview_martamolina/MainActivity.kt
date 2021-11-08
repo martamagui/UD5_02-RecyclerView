@@ -6,8 +6,10 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.marta.ud5_02_recyclerview_martamolina.databinding.ActivityMainBinding
-import com.marta.ud5_02_recyclerview_martamolina.model.RepositoryResponse
+import com.marta.ud5_02_recyclerview_martamolina.model.Repositories
+import com.marta.ud5_02_recyclerview_martamolina.model.Repository
 import com.marta.ud5_02_recyclerview_martamolina.model.toRepository
+import com.marta.ud5_02_recyclerview_martamolina.model.RepositoryResponse as RepositoryResponse
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,11 +23,18 @@ class MainActivity : AppCompatActivity() {
         binding.rvRepositories.layoutManager = LinearLayoutManager(this)
         val app = application as App
         val repositories = app.repositoriesList
-        val repositoriesResults = Gson().fromJson(RecyclerFakeData.repositoriesJson, RepositoryResponse::class.java)
-        Log.d("mainMsg",(repositoriesResults.size).toString())
-        repositories.addAll(listOf(repositoriesResults.toRepository()))
+        val repositoriesResults : Repositories? = Gson().fromJson(
+            RecyclerFakeData.repositoriesJson, Repositories::class.java
+        )
+        Log.d("aaa", repositoriesResults.toString())
+        //repositories.addAll(repositoriesResults.respositoriesGitHub.toRepository())
         adapter = RepositoryAdapter(repositories)
-
-
+        binding.rvRepositories.adapter = adapter
+    }
+    override fun onResume(){
+        super.onResume()
+        adapter.notifyDataSetChanged()
     }
 }
+
+

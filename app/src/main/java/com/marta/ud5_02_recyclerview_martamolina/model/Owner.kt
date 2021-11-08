@@ -12,7 +12,7 @@ data class Owner(
     @SerializedName("avatar_url")
     val ownerAvatarUrl : String,
     @SerializedName("gravatar_id")
-    val ownerGravatar_id :  String,
+    val ownerGravatarId :  String?,
     @SerializedName("url")
     val ownerUrl: String,
     @SerializedName("html_url")
