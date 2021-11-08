@@ -1,5 +1,6 @@
 package com.marta.ud5_02_recyclerview_martamolina
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +22,8 @@ class RepositoryAdapter(private val repositories: MutableList<Repository>) :
         val repository = repositories[position]
         holder.binding.tvRepName.text = repository.name
         holder.binding.tvRepDescription.text = repository.description
-        val url: String = (repository.ownerAvatarUrl).replace(" ", "")
+        val url: String = (repository.ownerAvatarUrl).replace(" ", "").lowercase()
+        Log.d("urls",url)
         Glide.with(holder.binding.ivRepImg.context)
             .load(url)
             .placeholder(R.drawable.resource_default)

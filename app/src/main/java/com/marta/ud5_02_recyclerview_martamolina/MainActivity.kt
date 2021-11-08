@@ -2,12 +2,9 @@ package com.marta.ud5_02_recyclerview_martamolina
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.marta.ud5_02_recyclerview_martamolina.databinding.ActivityMainBinding
-import com.marta.ud5_02_recyclerview_martamolina.model.Repositories
-import com.marta.ud5_02_recyclerview_martamolina.model.Repository
 import com.marta.ud5_02_recyclerview_martamolina.model.toRepository
 import com.marta.ud5_02_recyclerview_martamolina.model.RepositoryResponse as RepositoryResponse
 
