@@ -2,7 +2,7 @@ package com.marta.ud5_02_recyclerview_martamolina.model
 
 data class Repository(
     val name: String,
-    val id :String,
+    val id: String,
     val description: String,
     val ownerAvatarUrl: String,
     val ownerName: String,
@@ -35,8 +35,8 @@ fun RepositoryResponse.toRepository(): Repository {
     )
 }
 
-fun Array<RepositoryResponse>.toRepository(): List<Repository>{
-    return this.map{it.toRepository()}
+fun Array<RepositoryResponse>.toRepository(): List<Repository> {
+    return this.map { it.toRepository() }
 }
 
 
