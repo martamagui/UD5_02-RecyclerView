@@ -2,6 +2,7 @@ package com.marta.ud5_02_recyclerview_martamolina.model
 
 data class Repository(
     val name: String,
+    val id :String,
     val description: String,
     val ownerAvatarUrl: String,
     val ownerName: String,
@@ -11,6 +12,7 @@ data class Repository(
 ) {
     constructor(repositoryResponse: RepositoryResponse) : this(
         repositoryResponse.name,
+        repositoryResponse.nodeId,
         repositoryResponse.description,
         repositoryResponse.owner.ownerAvatarUrl,
         repositoryResponse.owner.ownerName,
@@ -23,6 +25,7 @@ data class Repository(
 fun RepositoryResponse.toRepository(): Repository {
     return Repository(
         this.name,
+        this.nodeId,
         this.description,
         this.owner.ownerAvatarUrl,
         this.owner.ownerName,

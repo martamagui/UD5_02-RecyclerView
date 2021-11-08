@@ -1,7 +1,9 @@
 package com.marta.ud5_02_recyclerview_martamolina
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.marta.ud5_02_recyclerview_martamolina.databinding.ActivityMainBinding
@@ -24,7 +26,12 @@ class MainActivity : AppCompatActivity() {
             RecyclerFakeData.repositoriesJson, Array<RepositoryResponse>::class.java
         )
         repositories.addAll(repositoriesResults.toRepository())
-        adapter = RepositoryAdapter(repositories)
+        adapter = RepositoryAdapter(repositories) { repository ->
+            Toast.makeText(this,"UwU",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("repository", repository.id)
+            startActivity(intent)
+        }
         binding.rvRepositories.adapter = adapter
     }
 
