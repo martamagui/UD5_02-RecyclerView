@@ -81,8 +81,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/source_sans_pro_bold"
                         android:text="@string/repository_name"
                         android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="34sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -92,9 +94,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
+                        android:fontFamily="@font/source_sans_pro_regular"
                         android:text="@string/descrip_name"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detail_repository_name" />
 
                     <TextView
@@ -102,9 +106,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
+                        android:fontFamily="@font/source_sans_pro_regular"
                         android:text="@string/license"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="16sp"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
 
                     <TextView
@@ -112,9 +118,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:fontFamily="@font/source_sans_pro_regular"
                         android:text="@string/topics"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detaill_license" />
@@ -126,6 +134,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/rounded_tvs"
+                        android:fontFamily="@font/source_sans_pro_regular"
                         android:paddingStart="12dp"
                         android:paddingTop="8dp"
                         android:paddingEnd="12dp"
