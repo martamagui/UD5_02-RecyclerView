@@ -12,4 +12,5 @@
     <color name="custom_colortext">#4ecdc4</color>
     <color name="custom_titleColor">#f7fff7</color>
     <color name="custom_BG_darker">#073b4c</color>
+    <color name="customchip">#FF8E3D</color>
 </resources>

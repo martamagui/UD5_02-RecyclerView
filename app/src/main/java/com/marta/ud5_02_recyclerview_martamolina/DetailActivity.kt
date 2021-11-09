@@ -35,9 +35,9 @@ class DetailActivity : AppCompatActivity() {
                     .into(binding.ivDetailRepImg)
                 binding.tvDetailRepositoryName.text = repository.name
                 binding.tvDetailDescription.text = repository.description
-                binding.tvDetaillLicense.text = repository.licenseName
+                binding.tvDetaillLicense.text = "License: " + repository.licenseName
                 var topics: String = "Tags: \n"
-                if (repository.topics != null && repository.topics?.size!! >0){
+                if (repository.topics != null && repository.topics?.size!! > 0) {
                     for (item in repository.topics) {
                         topics += " #$item,"
                     }
