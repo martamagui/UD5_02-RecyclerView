@@ -6,9 +6,9 @@ data class Repository(
     val description: String,
     val ownerAvatarUrl: String,
     val ownerName: String,
-    val licenseName: String? = "There's no license name",
+    val licenseName: String? ,
     val topics: List<String>,
-    val language: String? = "Unknow"
+    val language: String?
 ) {
     constructor(repositoryResponse: RepositoryResponse) : this(
         repositoryResponse.name,
