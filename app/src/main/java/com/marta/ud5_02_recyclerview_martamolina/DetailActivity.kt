@@ -37,9 +37,9 @@ class DetailActivity : AppCompatActivity() {
                 binding.tvDetailDescription.text = repository.description
                 binding.tvDetaillLicense.text = repository.licenseName
                 var topics: String = "Tags: \n"
-                if (repository.topics.size>0){
+                if (repository.topics != null && repository.topics?.size!! >0){
                     for (item in repository.topics) {
-                        topics += " #" + item + ","
+                        topics += " #$item,"
                     }
                     topics = topics.dropLast(1)
                     binding.tvDetaillTopics.text = topics

@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         )
         repositories.addAll(repositoriesResults.toRepository())
         adapter = RepositoryAdapter(repositories) { repository ->
-            Toast.makeText(this,"UwU",Toast.LENGTH_SHORT).show()
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("repository", repository.id)
             startActivity(intent)
