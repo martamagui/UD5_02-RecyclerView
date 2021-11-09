@@ -7,9 +7,9 @@
     <corners android:radius="20dp" />
 
     <!-- This is the border color -->
-    <stroke android:width="3dp" android:color="#9A5B79" />
+    <stroke android:width="3dp" android:color="@color/custom_colortext" />
 
     <!--- This is the background color -->
-    <solid android:color="#9A5B79" />
+    <solid android:color="@color/custom_colortext" />
 
 </shape>

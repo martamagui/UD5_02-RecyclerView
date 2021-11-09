@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- New colors. -->
+    <color name="custom_BG">#1a535c</color>
+    <color name="custom_colortext">#4ecdc4</color>
+    <color name="custom_titleColor">#f7fff7</color>
+    <color name="custom_BG_darker">#073b4c</color>
 </resources>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/custom_BG">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -48,6 +49,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/source_sans_pro_bold"
         android:text="@string/repository_name"
+        android:textColor="@color/custom_titleColor"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/source_sans_pro_regular"
         android:text="@string/descrip_name"
+        android:textColor="@color/custom_colortext"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_rep_name"
         app:layout_constraintStart_toStartOf="@+id/tv_rep_name"

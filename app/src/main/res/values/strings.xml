@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">UD5_02-RecyclerView-MartaMolina</string>
     <string name="repository_name">Ups, there is no Name</string>
-    <string name="descrip_name">This could be a description.. If this repository had one.</string>
+    <string name="descrip_name">This could be a description... If this repository had one.</string>
     <string name="license">There is no licenses.</string>
     <string name="topics">There is no tags.</string>
     <string name="img_description">This is an image.</string>
