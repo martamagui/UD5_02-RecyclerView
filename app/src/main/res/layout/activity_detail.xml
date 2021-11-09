@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DetailActivity">
 
     <com.google.android.material.card.MaterialCardView
@@ -26,9 +26,9 @@
             android:layout_height="match_parent"
             android:gravity="top"
             android:orientation="vertical"
-            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
             app:strokeColor="@color/design_default_color_on_primary"
-            app:cardElevation="0dp">
+            app:strokeWidth="1dp">
 
             <!-- Media -->
             <androidx.cardview.widget.CardView
@@ -52,7 +52,7 @@
                     app:cardCornerRadius="250dp">
 
                     <ImageView
-                        android:id="@+id/iv_rep_img"
+                        android:id="@+id/iv_detail_rep_img"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="0dp"
@@ -108,27 +108,39 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
 
                     <TextView
-                        android:id="@+id/tv_detaill_topics3"
+                        android:id="@+id/tv_detaill_topics"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="@string/topics"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detaill_license" />
 
-                    <com.google.android.material.chip.Chip
+                    <TextView
                         android:id="@+id/chip_languaje"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/rounded_tvs"
+                        android:paddingStart="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="8dp"
                         android:text="@string/languaje"
-                        app:layout_constraintStart_toStartOf="@+id/tv_detaill_topics3"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_detaill_topics3" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv_detaill_topics"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_detaill_topics" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

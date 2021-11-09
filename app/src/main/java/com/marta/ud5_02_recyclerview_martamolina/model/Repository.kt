@@ -2,13 +2,13 @@ package com.marta.ud5_02_recyclerview_martamolina.model
 
 data class Repository(
     val name: String,
-    val id :String,
+    val id: String,
     val description: String,
     val ownerAvatarUrl: String,
     val ownerName: String,
-    val licenseName: String? = "There's no license name",
+    val licenseName: String? ,
     val topics: List<String>,
-    val language: String? = "Unknow"
+    val language: String?
 ) {
     constructor(repositoryResponse: RepositoryResponse) : this(
         repositoryResponse.name,
@@ -35,8 +35,8 @@ fun RepositoryResponse.toRepository(): Repository {
     )
 }
 
-fun Array<RepositoryResponse>.toRepository(): List<Repository>{
-    return this.map{it.toRepository()}
+fun Array<RepositoryResponse>.toRepository(): List<Repository> {
+    return this.map { it.toRepository() }
 }
 
 
