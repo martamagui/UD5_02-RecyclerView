@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
+    </style>
+    <style name="TextoEspaciado" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#f1faee</item>
+        <item name="android:letterSpacing">0.1</item>
     </style>
 </resources>
