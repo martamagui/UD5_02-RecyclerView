@@ -3,6 +3,7 @@ package com.marta.ud5_02_recyclerview_martamolina
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rvRepositories.layoutManager = LinearLayoutManager(this)
+        binding.rvRepositories.visibility = View.GONE
         val app = application as App
         val repositories = app.repositoriesList
         val repositoriesResults = Gson().fromJson(
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         adapter.notifyDataSetChanged()
+        binding.rvRepositories.visibility = View.VISIBLE
     }
 }
 

@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.bumptech.glide.Glide
 import com.marta.ud5_02_recyclerview_martamolina.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -17,39 +16,32 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         val repoId = intent.extras?.getString(ARG_REPOSITORY_ID)
         if (repoId == null) {
-            Toast.makeText(this, "User not found, go back to MainActivity :)", Toast.LENGTH_SHORT)
-                .show()
+            notFound()
         } else {
             val repository = app.repositoriesList.firstOrNull { repoId == it.id }
-            if (repository == null) {
-                Toast.makeText(
-                    this,
-                    "User not found, go back to MainActivity :)",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-            } else {
-                Glide.with(binding.ivDetailRepImg.context)
-                    .load((repository.ownerAvatarUrl).replace(" ", "").lowercase())
-                    .placeholder(R.drawable.resource_default)
-                    .into(binding.ivDetailRepImg)
-                binding.tvDetailRepositoryName.text = repository.name
-                binding.tvDetailDescription.text = repository.description
-                binding.tvDetaillLicense.text = "License: " + repository.licenseName
-                var topics: String = "Tags: \n"
-                if (repository.topics != null && repository.topics?.size!! > 0) {
-                    for (item in repository.topics) {
-                        topics += " #$item,"
-                    }
-                    topics = topics.dropLast(1)
-                    binding.tvDetaillTopics.text = topics
-                }
-                if (!repository.language.isNullOrEmpty()) {
-                    binding.chipLanguaje.text = repository.language
-                }
-            }
-        }
+            repository.let {
+                binding.ivDetailRepImg.glideImg(repository?.ownerAvatarUrl)
+                binding.tvDetailRepositoryName.text =
+                    if (!repository?.name.isNullOrEmpty()) repository?.name else binding.tvDetailRepositoryName.text
+                binding.tvDetailDescription.text =
+                    if (!repository?.description.isNullOrEmpty()) repository?.description else binding.tvDetailDescription.text
+                binding.tvDetaillLicense.text =
+                    if (!repository?.licenseName.isNullOrEmpty()) "License: " + repository?.licenseName else binding.tvDetaillLicense.text
+                binding.tvDetaillTopics.text =
+                    if (!repository?.topics.isNullOrEmpty()) topicsToHastags(repository?.topics) else binding.tvDetaillTopics.text
+                binding.fakeChipLanguaje.text =
+                    if (!repository?.language.isNullOrEmpty()) repository?.language else binding.fakeChipLanguaje.text
 
+            }?: notFound()
+        }
+    }
+
+    private fun notFound() {
+        Toast.makeText(
+            this,
+            "User not found, go back to MainActivity :)",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     companion object {

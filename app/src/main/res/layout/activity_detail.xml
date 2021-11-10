@@ -35,11 +35,10 @@
                 android:layout_height="220dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@color/custom_BG"
-                app:cardCornerRadius="250dp"
-                >
+                app:cardCornerRadius="250dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -67,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -128,7 +128,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/chip_languaje"
+                    android:id="@+id/fake_chip_languaje"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
