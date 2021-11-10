@@ -6,6 +6,7 @@ data class Repository(
     val description: String,
     val ownerAvatarUrl: String,
     val ownerName: String,
+    val ownerProfile: String,
     val licenseName: String? ,
     val topics: List<String>,
     val language: String?
@@ -16,6 +17,7 @@ data class Repository(
         repositoryResponse.description,
         repositoryResponse.owner.ownerAvatarUrl,
         repositoryResponse.owner.ownerName,
+        repositoryResponse.owner.ownerUrl,
         repositoryResponse.license?.licenseName,
         repositoryResponse.topics,
         repositoryResponse.language
@@ -29,6 +31,7 @@ fun RepositoryResponse.toRepository(): Repository {
         this.description,
         this.owner.ownerAvatarUrl,
         this.owner.ownerName,
+        this.owner.ownerHtmlUrl,
         this.license?.licenseName,
         this.topics,
         this.language

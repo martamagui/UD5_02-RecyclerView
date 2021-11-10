@@ -2,6 +2,7 @@ package com.marta.ud5_02_recyclerview_martamolina
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,6 +34,11 @@ class DetailActivity : AppCompatActivity() {
                     if (!repository?.language.isNullOrEmpty()) repository?.language else binding.fakeChipLanguaje.text
                 binding.tvUserName.text =
                     if (!repository?.ownerName.isNullOrEmpty()) "@"+repository?.ownerName else binding.tvUserName.text
+                binding.tvUserName.setOnClickListener {
+                    val intentProfile = Intent(Intent.ACTION_VIEW)
+                    intentProfile.data = Uri.parse(convertUrl(repository?.ownerProfile))
+                    startActivity(intentProfile)
+                }
 
             } ?: notFound()
         }
