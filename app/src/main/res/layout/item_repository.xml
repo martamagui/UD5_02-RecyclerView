@@ -5,7 +5,11 @@
     android:id="@+id/item_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/custom_BG">
+    android:background="@color/custom_BG"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -18,7 +22,11 @@
         app:cardCornerRadius="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        >
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
