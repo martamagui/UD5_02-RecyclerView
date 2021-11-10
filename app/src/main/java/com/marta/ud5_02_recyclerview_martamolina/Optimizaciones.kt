@@ -7,15 +7,15 @@ fun ImageView.glideImg(
     linkImg: String?
 ) {
     Glide.with(this.context)
-        .load(linkImg)
+        .load(convertUrl(linkImg))
         .placeholder(R.drawable.resource_default)
         .into(this)
 }
 
 fun convertUrl(
-    url: String
-): String {
-    return url.replace(" ", "").lowercase()
+    url: String?
+): String? {
+    return url?.replace(" ", "")?.lowercase()
 }
 
 fun topicsToHastags(

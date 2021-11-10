@@ -20,7 +20,7 @@ class RepositoryAdapter(private val repositories: MutableList<Repository>, val o
         val repository = repositories[position]
         holder.binding.tvRepName.text = repository.name
         holder.binding.tvRepDescription.text = repository.description
-        holder.binding.ivRepImg.glideImg(convertUrl(repository.ownerAvatarUrl))
+        holder.binding.ivRepImg.glideImg(repository.ownerAvatarUrl)
         val onClickListener : View.OnClickListener = object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 onClickListner(repository)
