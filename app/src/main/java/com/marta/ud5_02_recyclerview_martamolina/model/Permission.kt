@@ -4,13 +4,13 @@ import com.google.gson.annotations.SerializedName
 
 data class Permission(
     @SerializedName("admin")
-    val admin : Boolean,
+    val admin: Boolean,
     @SerializedName("maintain")
-    val maintain : Boolean,
+    val maintain: Boolean,
     @SerializedName("push")
-    val push : Boolean,
+    val push: Boolean,
     @SerializedName("triage")
-    val triage : Boolean,
+    val triage: Boolean,
     @SerializedName("pull")
     val pull: Boolean
 )

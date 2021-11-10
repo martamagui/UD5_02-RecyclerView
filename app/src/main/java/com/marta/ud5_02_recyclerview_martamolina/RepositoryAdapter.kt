@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marta.ud5_02_recyclerview_martamolina.databinding.ItemRepositoryBinding
 import com.marta.ud5_02_recyclerview_martamolina.model.Repository
 
-class RepositoryAdapter(private val repositories: MutableList<Repository>, val onClickListner:(Repository)->Unit) :
+class RepositoryAdapter(
+    private val repositories: MutableList<Repository>,
+    val onClickListner: (Repository) -> Unit
+) :
     RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,7 +24,7 @@ class RepositoryAdapter(private val repositories: MutableList<Repository>, val o
         holder.binding.tvRepName.text = repository.name
         holder.binding.tvRepDescription.text = repository.description
         holder.binding.ivRepImg.glideImg(repository.ownerAvatarUrl)
-        val onClickListener : View.OnClickListener = object : View.OnClickListener {
+        val onClickListener: View.OnClickListener = object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 onClickListner(repository)
             }

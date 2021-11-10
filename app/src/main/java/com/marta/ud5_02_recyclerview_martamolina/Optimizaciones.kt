@@ -22,7 +22,7 @@ fun topicsToHastags(
     topics: List<String>?
 ): String {
     var hastags: String = "Tags: \n"
-    if(topics!=null){
+    if (topics != null) {
         for (item in topics) {
             hastags += " #$item,"
         }

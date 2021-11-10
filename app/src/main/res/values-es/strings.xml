@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">UD5_02-RecyclerView-MartaMolina</string>
+    <string name="app_name">UD5.02 - RecyclerView-MartaMolina</string>
     <string name="repository_name">Ups, no hay nombre.</string>
     <string name="descrip_name">Esto sería una descripción...Si tuviera alguna.</string>
     <string name="license">No hay licencias.</string>

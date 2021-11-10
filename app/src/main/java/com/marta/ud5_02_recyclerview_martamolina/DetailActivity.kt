@@ -33,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
                 binding.fakeChipLanguaje.text =
                     if (!repository?.language.isNullOrEmpty()) repository?.language else binding.fakeChipLanguaje.text
                 binding.tvUserName.text =
-                    if (!repository?.ownerName.isNullOrEmpty()) "@"+repository?.ownerName else binding.tvUserName.text
+                    if (!repository?.ownerName.isNullOrEmpty()) "@" + repository?.ownerName else binding.tvUserName.text
                 binding.linearUserName.setOnClickListener {
                     val intentProfile = Intent(Intent.ACTION_VIEW)
                     intentProfile.data = Uri.parse(convertUrl(repository?.ownerProfile))
