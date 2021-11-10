@@ -7,4 +7,5 @@
     <string name="topics">No hay etiquetas.</string>
     <string name="img_description">Esto es una foto.</string>
     <string name="languaje">Lenguaje desconocido.</string>
+    <string name="user_name">\@NombreUsuario</string>
 </resources>

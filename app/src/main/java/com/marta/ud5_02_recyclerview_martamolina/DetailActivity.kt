@@ -31,8 +31,10 @@ class DetailActivity : AppCompatActivity() {
                     if (!repository?.topics.isNullOrEmpty()) topicsToHastags(repository?.topics) else binding.tvDetaillTopics.text
                 binding.fakeChipLanguaje.text =
                     if (!repository?.language.isNullOrEmpty()) repository?.language else binding.fakeChipLanguaje.text
+                binding.tvUserName.text =
+                    if (!repository?.ownerName.isNullOrEmpty()) "@"+repository?.ownerName else binding.tvUserName.text
 
-            }?: notFound()
+            } ?: notFound()
         }
     }
 

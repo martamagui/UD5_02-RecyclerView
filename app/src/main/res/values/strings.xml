@@ -6,4 +6,5 @@
     <string name="topics">There is no tags.</string>
     <string name="img_description">This is an image.</string>
     <string name="languaje">Unknow languaje</string>
+    <string name="user_name">\@UserName</string>
 </resources>
